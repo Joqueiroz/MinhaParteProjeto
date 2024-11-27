@@ -1,0 +1,47 @@
+Curl POST
+
+{
+    "data_inicio":"2024-01-02 18:00:00",
+    "data_fim":"2024-01-04 19:00:00",
+    "id_usuario":"1",
+    "id_sala":"1"
+}
+
+Curl PUT
+
+{
+    "id_reserva": 1,
+    "data_inicio": "2024-01-02 21:00:00",
+    "data_fim": "2024-01-05 18:00:00",
+    "id_usuario": 1,
+    "id_sala": 1
+}
+
+Criação Entidades
+
+create database banco_salas;
+use banco_salas;
+create table usuario(
+id_usuario int auto_increment primary key,
+name varchar(100) not null,
+email varchar(255) not null unique,
+cpf varchar(11) not null unique,
+password varchar(50) not null
+);
+create table sala(
+id_sala int auto_increment primary key,
+descricao varchar(255) not null,
+nome varchar(100) not null,
+status_sala TINYINT not null,
+capacidade int not null
+);
+create table reserva(
+id_reserva int auto_increment primary key,
+data_inicio datetime not null,
+data_fim datetime not null,
+id_usuario int not null,
+id_sala int not null,
+foreign key (id_usuario) references usuario(id_usuario),
+foreign key (id_sala) references sala(id_sala)
+);
+
