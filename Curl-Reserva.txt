@@ -1,3 +1,5 @@
+Fazer npm install moment-timezone
+
 Curl POST
 
 {
@@ -5,16 +7,6 @@ Curl POST
     "data_fim":"2024-01-04 19:00:00",
     "id_usuario":"1",
     "id_sala":"1"
-}
-
-Curl PUT
-
-{
-    "id_reserva": 1,
-    "data_inicio": "2024-01-02 21:00:00",
-    "data_fim": "2024-01-05 18:00:00",
-    "id_usuario": 1,
-    "id_sala": 1
 }
 
 Criação Entidades
