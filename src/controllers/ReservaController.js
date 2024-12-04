@@ -61,10 +61,10 @@ module.exports = class ReservaController {
       connect.query(query, valoresConflicto, (err, results) => {
         // Verifica se ocorreu algum erro durante a execução da query
         if (err) {
-          console.error("Erro ao verificar conflito de reserva:", err);
+          console.error("Erro ao verificar reservas:", err);
           return res
             .status(500)
-            .json({ error: "Erro ao verificar disponibilidade da sala" });
+            .json({ error: "Erro ao verificar reservas" });
         }
 
         // Se encontrar algum conflito, retorna erro
@@ -187,10 +187,10 @@ module.exports = class ReservaController {
       connect.query(query, valoresConflicto, (err, results) => {
         // Verifica se ocorreu algum erro durante a execução da query
         if (err) {
-          console.error("Erro ao verificar conflito de reserva:", err);
+          console.error("Erro ao verificar reservas:", err);
           return res
             .status(500)
-            .json({ error: "Erro ao verificar disponibilidade da sala" });
+            .json({ error: "Erro ao verificar reservas" });
         }
   
         // Se encontrar algum conflito, retorna erro
